@@ -1,0 +1,17 @@
+# Dependencies
+/node_modules
+
+# Build files
+/dist
+/.vite
+
+# Env files
+.env.local
+.env.*.local
+
+# IDE config & logs
+.vscode
+.idea
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
