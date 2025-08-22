@@ -1,6 +1,6 @@
-// src/nodes/PdfParseNode.tsx
-import { Handle, Position, NodeProps } from 'reactflow';
+import { Handle, Position, type NodeProps } from 'reactflow';
 import { FileText } from 'lucide-react';
+
 export function PdfParseNode({ data }: NodeProps<{ label: string }>) {
   return (
     <div className="bg-orange-900/50 border border-orange-500 rounded-lg shadow-xl w-64">

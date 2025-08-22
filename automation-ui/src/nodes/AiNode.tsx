@@ -1,5 +1,4 @@
-// src/nodes/AiNode.tsx
-import { Handle, Position, NodeProps } from 'reactflow';
+import { Handle, Position, type NodeProps } from 'reactflow';
 import { Sparkles } from 'lucide-react';
 
 export function AiNode({ data }: NodeProps<{ label: string }>) {

@@ -1,11 +1,9 @@
-// src/nodes/EmailNode.tsx
-
-import { Handle, Position, NodeProps } from 'reactflow';
+import { Handle, Position, type NodeProps } from 'reactflow';
 import { Mail } from 'lucide-react';
 import { useCallback } from 'react';
 
-export function EmailNode({ data, id, setNodes }: NodeProps<{ label: string; recipient: string; setNodes: Function }>) {
-  
+// Corrected type definition
+export function EmailNode({ data, id, setNodes }: NodeProps<{ label: string; recipient: string; }> & { setNodes: Function }) {
   const handleInputChange = useCallback(
     (event: React.ChangeEvent<HTMLInputElement>) => {
       const newRecipient = event.target.value;
@@ -18,7 +16,7 @@ export function EmailNode({ data, id, setNodes }: NodeProps<{ label: string; rec
         }),
       );
     },
-    [id, setNodes], // <-- THE FIX: 'data' has been removed from this array
+    [id, setNodes],
   );
 
   return (
@@ -40,4 +38,4 @@ export function EmailNode({ data, id, setNodes }: NodeProps<{ label: string; rec
       </div>
     </div>
   );
-};
+}

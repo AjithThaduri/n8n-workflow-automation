@@ -5,11 +5,12 @@ import ReactFlow, {
   useNodesState,
   useEdgesState,
   addEdge,
-  Node,
-  Edge,
-  Connection,
   ReactFlowProvider,
   useReactFlow,
+  // Corrected type-only imports
+  type Node,
+  type Edge,
+  type Connection,
 } from 'reactflow';
 import 'reactflow/dist/style.css';
 
@@ -40,7 +41,6 @@ function FlowCanvas() {
   const [edges, setEdges, onEdgesChange] = useEdgesState([]);
   const { screenToFlowPosition, toObject } = useReactFlow();
 
-  // State for the last saved workflow ID and the dynamic PDF URL
   const [currentWorkflowId, setCurrentWorkflowId] = useState<string | null>(null);
   const [pdfUrl, setPdfUrl] = useState('');
 
@@ -111,7 +111,6 @@ function FlowCanvas() {
     }
   }, [toObject]);
   
-  // onRun now uses the dynamic PDF URL from the input field
   const onRun = useCallback(async () => {
     if (!currentWorkflowId) {
       alert('Please save the workflow first to get an ID.');
@@ -143,10 +142,8 @@ function FlowCanvas() {
     }
   }, [currentWorkflowId, pdfUrl]);
 
-
   return (
     <div className="flex-grow h-full flex flex-col relative">
-      {/* UI for Workflow ID and PDF URL Input */}
       <div className="absolute top-4 left-4 z-10 p-2 bg-[#222222] border border-gray-700 text-white rounded-lg w-1/3">
           <div className="text-sm mb-2">
             Current Workflow ID: <span className="font-bold text-green-400">{currentWorkflowId || 'None (Save to get ID)'}</span>

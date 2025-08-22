@@ -1,5 +1,4 @@
-// src/nodes/LogNode.tsx
-import { Handle, Position, NodeProps } from 'reactflow';
+import { Handle, Position, type NodeProps } from 'reactflow';
 import { Terminal } from 'lucide-react';
 
 export function LogNode({ data }: NodeProps<{ label: string }>) {

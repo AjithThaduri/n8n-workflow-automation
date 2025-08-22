@@ -1,7 +1,5 @@
-// src/nodes/TriggerNode.tsx
-
-import { Handle, Position, NodeProps } from 'reactflow';
-import { Zap } from 'lucide-react'; // Using a 'zap' icon for triggers
+import { Handle, Position, type NodeProps } from 'reactflow';
+import { Zap } from 'lucide-react';
 
 export function TriggerNode({ data }: NodeProps<{ label: string }>) {
   return (
@@ -12,13 +10,7 @@ export function TriggerNode({ data }: NodeProps<{ label: string }>) {
           <div className="text-gray-200 font-medium">{data.label}</div>
         </div>
       </div>
-
-      {/* A trigger node only has a source handle to start the flow */}
-      <Handle 
-        type="source" 
-        position={Position.Right} 
-        className="!bg-green-400 !w-3 !h-3"
-      />
+      <Handle type="source" position={Position.Right} className="!bg-green-400 !w-3 !h-3" />
     </div>
   );
 }
